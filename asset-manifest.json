@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/auction-react/static/css/main.d7957266.css",
+    "main.js": "/auction-react/static/js/main.1c6edb5a.js",
+    "static/js/787.44bfeeb3.chunk.js": "/auction-react/static/js/787.44bfeeb3.chunk.js",
+    "index.html": "/auction-react/index.html",
+    "main.d7957266.css.map": "/auction-react/static/css/main.d7957266.css.map",
+    "main.1c6edb5a.js.map": "/auction-react/static/js/main.1c6edb5a.js.map",
+    "787.44bfeeb3.chunk.js.map": "/auction-react/static/js/787.44bfeeb3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d7957266.css",
+    "static/js/main.1c6edb5a.js"
+  ]
+}
