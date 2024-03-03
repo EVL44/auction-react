@@ -31,22 +31,17 @@ function Login() {
         });
 
         if (result.status === 200) {
-            // Login successful, store user info and navigate to home
             result = await result.json();
             console.warn("result", result);
             localStorage.setItem("user-info", JSON.stringify(result));
             navigate("/Home");
         } else {
-            // Handle login error, set error message
             setErrorMessage("Invalid email or password. Please try again.");
 
-            // Clear email and password fields
             document.getElementById("email").value = "";
             document.getElementById("password").value = "";
         }
     }
-
-
 
     return (
         <div>
@@ -54,12 +49,23 @@ function Login() {
             {errorMessage && <p className="error-message">{errorMessage}</p>}
             <div className='custom-cont'>
                 <div className="custom-login">
-                    <h1 className='font-b mb-4'>Login</h1>
-                    <input type="email" id="email" onChange={(e) => setEmail(e.target.value)} className="form-control mb-2" placeholder="Email" required/>  <br />
-                    <input type="password" id="password" onChange={(e) => setPassword(e.target.value)} className="form-control mb-3" placeholder="Password" required />  <br />
+                    <h1 className='font-b mb-5'>Login</h1>
 
+                    <div className="group">
+                        <input type="email" id="email" onChange={(e) => setEmail(e.target.value)} className="input mt-3" required/>
+                            <span className="highlight"></span>
+                            <span className="bar"></span>
+                            <label className='font-b'>Email</label>
+                    </div> <br />
 
-                    <Button onClick={login} className="custom-btn"> Done </Button> <br />
+                    <div className="group">
+                        <input type="password" id="password" onChange={(e) => setPassword(e.target.value)} className="input mt-5" required/>
+                            <span className="highlight"></span>
+                            <span className="bar"></span>
+                            <label className='font-b'>Password</label>
+                    </div> <br />
+
+                    <Button onClick={login} className="custom-btn mt-5 font-b"> Done </Button> <br />
 
                 </div>
             </div>
