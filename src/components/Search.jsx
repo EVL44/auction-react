@@ -13,7 +13,7 @@ function Search() {
   }
 
   return (
-    <Form onSubmit={handleSearch} className="d-flex align-items-center custom-search font-a">
+    <Form onSubmit={handleSearch} className="d-flex align-items-center custom-search font-c">
       <FormControl
         type="search"
         placeholder="Search"

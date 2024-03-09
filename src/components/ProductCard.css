@@ -1,0 +1,113 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Product container */
+  .product-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 25px;
+    border: 1px black solid !important;
+  }
+  
+  /* Product image */
+  .product-image {
+    flex: 0 0 50%;
+    overflow: hidden;
+    height: 80vh;
+    border: 1px black solid !important;
+  }
+  
+  .product-image img {
+    width: 100%;
+    height: auto;
+    border: 1px black solid !important;
+  }
+  
+  /* Product details */
+  .product-details {
+    flex: 0 0 50%;
+    padding: 20px;
+    background-color: #f8f9fa;
+    height: 80vh;
+    border: 1px black solid !important;
+  }
+  
+  .product-title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    padding: 20px 10px;
+    border: 1px black solid !important;
+  }
+  
+  .product-description {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+    border: 1px black solid !important;
+  }
+  
+  .product-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 10px;
+    border: 1px black solid !important;
+  }
+  
+  .product-time {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+    border: 1px black solid !important;
+  }
+  
+
+  /* Red text */
+  .red-text {
+    color: red;
+    border: 1px black solid !important;
+  }
+  
+  /* Product button */
+  .product-button {
+    padding: 10px 15px !important;
+    margin-top: 20px;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    color: #fff;
+    background-color: #ff6a00 !important;
+    border: 0px #ff6a00;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: 1px black solid !important;
+  }
+  
+  .product-button:hover {
+    background-color: #00b31e !important;
+    border: 1px black solid !important;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center !important;
+    border: 1px black solid !important;
+  }
+
+  .user-name {
+    margin: 1px 0 0 15px;
+    border: 1px black solid !important;
+  }
+
+  .user-avatar {
+    border-radius: 50%;
+    border: 3px black solid ;
+    margin-left: 10px;
+  }
