@@ -4,7 +4,7 @@ import "./style.css";
 import "./ProductCard.css";
 import Header from "./Header";
 import axios from "axios";
-import { Button } from "react-bootstrap";
+import Loading from "./Loading"; // Import the Loading component
 
 function ProductCard() {
   let user = JSON.parse(localStorage.getItem("user-info"));
@@ -16,6 +16,8 @@ function ProductCard() {
   const [remainingTime, setRemainingTime] = useState("");
   const [expiredMessage, setExpiredMessage] = useState("");
   const [userDetails, setUserDetails] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [userLoading, setUserLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -65,7 +67,9 @@ function ProductCard() {
       }
     };
 
-    fetchData();
+    fetchData()
+      .then(() => setLoading(false))
+      .catch(() => setLoading(false));
   }, [pid]);
 
   useEffect(() => {
@@ -82,7 +86,7 @@ function ProductCard() {
           `http://localhost:8000/api/user/${data.user_id}`
         );
         setUserDetails(response.data);
-        console.warn(userDetails, userDetails.avatar);
+        setUserLoading(false); // Set user loading to false once user details are fetched
       } catch (error) {
         console.error("Error fetching user details:", error.message);
       }
@@ -137,65 +141,72 @@ function ProductCard() {
   return (
     <div>
       <Header />
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
-      <div className="product-container">
-        <div className="product-image">
-          <img
-            className="img"
-            src={`http://localhost:8000/${data.file_path}`}
-            alt={data.name}
-          />
-        </div>
-        <div className="product-details">
-          <div className="user-info">
-            {userDetails && userDetails.avatar ? (
-              <img className="user-avatar" style={{ width: 45, height: 45 }} src={`http://localhost:8000/${userDetails.avatar}`} alt="Avatar" />
-            ) : (
+      {loading || userLoading ? ( // Check both loading states
+        <Loading />
+      ) : (
+        <>
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
+          <div className="product-container">
+            <div className="product-image">
               <img
-                className="user-avatar"
-                style={{ width: 45, height: 45 }}
-                src="/unknown.jpg" 
+                className="img"
+                src={`http://localhost:8000/${data.file_path}`}
+                alt={data.name}
               />
-            )}
-            <h2 className="font-c user-name">
-              {userDetails ? userDetails.name : "..."}
-            </h2>
-          </div>
-          <h1 className="product-title">{data.name}</h1>
-          <p className="product-description">{data.description}</p>
-          <div className="product-price">
-            <span className="product-price-label">Price : </span>
-            <span className="product-price-value">${price}</span>
-          </div>
-          <div className="product-time">
-            <span className="product-time-label">Time Left : </span>
-            <span className="product-time-value" id="remaining-time">
-              {remainingTime}
-            </span>
-          </div>
-          {expiredMessage && <p className="red-text">{expiredMessage}</p>}
-          {!expiredMessage && (
-            <>
-              <input
-                type="number"
-                value={selectedIncrement}
-                onChange={handleIncrementChange}
-                placeholder="Enter increment amount"
-                className="form-control"
-              />
-              {user && user.id === data.user_id ? (
-                <button className="product-button" disabled>
-                  Buy Now
-                </button>
-              ) : (
-                <button onClick={auction} className="product-button">
-                  Buy Now
-                </button>
+            </div>
+            <div className="product-details">
+              <div className="user-info">
+                {userDetails && userDetails.avatar ? (
+                  <img
+                    className="user-avatar"
+                    style={{ width: 45, height: 45 }}
+                    src={`http://localhost:8000/${userDetails.avatar}`}
+                    alt="Avatar"
+                  />
+                ) : (
+                  <img
+                    className="user-avatar"
+                    style={{ width: 45, height: 45 }}
+                    src="/unknown.jpg"
+                  />
+                )}
+                <h2 className="font-c user-name">
+                  {userDetails ? userDetails.name : "..."}
+                </h2>
+              </div>
+              <h1 className="product-title">{data.name}</h1>
+              <p className="product-description">{data.description}</p>
+              <div className="product-price">
+                <span className="product-price-label">Price : </span>
+                <span className="product-price-value">${price}</span>
+              </div>
+              <div className="product-time">
+                <span className="product-time-label">Time Left : </span>
+                <span className="product-time-value" id="remaining-time">
+                  {remainingTime}
+                </span>
+              </div>
+              {expiredMessage && <p className="red-text">{expiredMessage}</p>}
+              {!expiredMessage && (
+                <>
+                  <input
+                    type="number"
+                    value={selectedIncrement}
+                    onChange={handleIncrementChange}
+                    placeholder="Enter increment amount"
+                    className="form-control"
+                  />
+                  {user && user.id === data.user_id ? (
+                    <button className="product-button" disabled> Buy Now </button>
+                  ) : (
+                    <button onClick={auction} className="product-button"> Buy Now </button>
+                  )}
+                </>
               )}
-            </>
-          )}
-        </div>
-      </div>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }

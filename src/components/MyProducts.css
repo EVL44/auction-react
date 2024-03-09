@@ -1,0 +1,33 @@
+.custom-btn {
+    background-color: rgb(17, 17, 17) !important;
+    border: 0px rgb(17, 17, 17) !important;
+    width: 100% !important;
+    border-radius: 20px !important;
+    padding: 10px !important;
+  }
+  
+  .custom-add {
+    background-color: rgb(15, 192, 15) !important;
+    border: 0px rgb(15, 192, 15) !important;
+    margin-right: 10px !important;
+  }
+  
+  .custom-delete {
+    background-color: red !important;
+    border: 0px red !important;
+    color: white !important;
+    margin-left: 10px !important;
+    padding: 5px 15px !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+  }
+  
+  .custom-update {
+    background-color: rgb(255, 191, 0) !important;
+    border: 0px rgb(255, 191, 0) !important;
+    color: white !important;
+    padding: 5px 15px !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+  }
+  

@@ -11,20 +11,26 @@ function Header() {
   let user = JSON.parse(localStorage.getItem("user-info"));
   const [searchKey, setSearchKey] = useState("");
   const [avatar, setAvatar] = useState("");
+  const [avatarLoaded, setAvatarLoaded] = useState(false); // Track whether avatar is loaded
 
   useEffect(() => {
     if (localStorage.getItem("user-info")) {
       const fetchData = async () => {
-        let result = await fetch(`http://localhost:8000/api/user/${user.id}`);
-        if (!result.ok) {
-          throw new Error("Failed to fetch data");
+        try {
+          let result = await fetch(`http://localhost:8000/api/user/${user.id}`);
+          if (!result.ok) {
+            throw new Error("Failed to fetch data");
+          }
+          result = await result.json();
+          setAvatar(result.avatar);
+          setAvatarLoaded(true); // Set avatarLoaded to true once avatar is fetched
+        } catch (error) {
+          console.error("Error fetching user data:", error);
         }
-        result = await result.json();
-        setAvatar(result.avatar);
       };
       fetchData();
     }
-  });
+  }, [user.id]);
 
   function Logout() {
     localStorage.clear();
@@ -109,19 +115,15 @@ function Header() {
                     MyProducts
                   </Nav.Link>
                   
-                  {user && user.avatar ? (
+                  {avatarLoaded ? (
                     <img
-                    src={"http://localhost:8000/" + avatar}
-                    style={{ width: 35, height: 35 }}
-                    alt="SU"
-                    className="avatar"
-                  />
-                  ) : (
-                    <img
-                      className="avatar"
+                      src={"http://localhost:8000/" + avatar}
                       style={{ width: 35, height: 35 }}
-                      src="/unknown.jpg"
+                      alt="User Avatar"
+                      className="avatar"
                     />
+                  ) : (
+                    <div className="avatar-placeholder"></div> // Placeholder for avatar
                   )}
                   <NavDropdown
                     title={user && user.name}

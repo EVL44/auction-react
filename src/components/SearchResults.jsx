@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Table } from 'react-bootstrap';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Header from './Header';
+import Loading from './Loading';
+
 
 function SearchResults() {
   const location = useLocation();
@@ -9,6 +11,7 @@ function SearchResults() {
   const searchParams = new URLSearchParams(location.search);
   const searchKey = searchParams.get('key');
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -18,6 +21,7 @@ function SearchResults() {
           const response = await fetch(`http://localhost:8000/api/search/${searchKey}`);
           const result = await response.json();
           setData(result);
+          setLoading(false);
         } catch (error) {
           console.error('Error fetching data:', error);
         }
@@ -39,6 +43,9 @@ function SearchResults() {
   return (
     <div>
       <Header />
+      {loading ? ( // Display loading indicator if loading is true
+            <Loading />
+          ) : (
       <div className="d-flex flex-column align-items-center font-a">
         <h1>Results</h1> <br />
         <div className="col-sm-8 off-sm-2">
@@ -61,6 +68,7 @@ function SearchResults() {
         </div>
         <br /> <br />
       </div>
+      )}
     </div>
   );
 }

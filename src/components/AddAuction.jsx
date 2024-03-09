@@ -48,13 +48,14 @@ function AddProduct() {
       <Header />
       <div className="custom-cont">
         <div className="custom-login">
-          <h1 className="font-b mb-4">Add Product</h1>
+          <h1 className="font-b mb-4">Add Auction </h1>
           <Form>
             <input type="text" onChange={(e) => setName(e.target.value)} placeholder="Name" className="form-control mb-2 " /> <br />
             <input type="number" onChange={(e) => setPrice(e.target.value)} placeholder="Price" className="form-control mb-3 " /> <br />
             <input type="text" onChange={(e) => setDescription(e.target.value)} placeholder="Description" className="form-control mb-3" /> <br />
             <input type="file" onChange={(e) => setFile(e.target.files[0])} className="mb-3 form-control custom-placeholder" />
-          
+            <input type="datetime-local" onChange={(e) => setExpirationTime(e.target.value)} className="mb-3 form-control custom-placeholder" />
+
             <Button onClick={addProduct} className="custom-btn"> Done </Button>
           </Form>
 

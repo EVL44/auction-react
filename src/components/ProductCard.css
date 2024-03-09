@@ -11,7 +11,7 @@
     justify-content: center;
     align-items: flex-start;
     margin-top: 25px;
-    border: 1px black solid !important;
+    
   }
   
   /* Product image */
@@ -19,13 +19,12 @@
     flex: 0 0 50%;
     overflow: hidden;
     height: 80vh;
-    border: 1px black solid !important;
+   /** margin-left: 15px;**/
   }
   
   .product-image img {
     width: 100%;
     height: auto;
-    border: 1px black solid !important;
   }
   
   /* Product details */
@@ -34,7 +33,6 @@
     padding: 20px;
     background-color: #f8f9fa;
     height: 80vh;
-    border: 1px black solid !important;
   }
   
   .product-title {
@@ -43,14 +41,12 @@
     color: #333;
     margin-bottom: 20px;
     padding: 20px 10px;
-    border: 1px black solid !important;
   }
   
   .product-description {
     font-size: 16px;
     color: #555;
     margin-bottom: 20px;
-    border: 1px black solid !important;
   }
   
   .product-price {
@@ -58,27 +54,25 @@
     font-weight: bold;
     color: #007bff;
     margin-bottom: 10px;
-    border: 1px black solid !important;
   }
   
   .product-time {
     font-size: 16px;
     color: #555;
     margin-bottom: 20px;
-    border: 1px black solid !important;
   }
   
 
   /* Red text */
   .red-text {
     color: red;
-    border: 1px black solid !important;
   }
   
   /* Product button */
   .product-button {
     padding: 10px 15px !important;
     margin-top: 20px;
+    margin-bottom: 55px !important;
     font-size: 18px !important;
     font-weight: bold !important;
     color: #fff;
@@ -87,23 +81,19 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    border: 1px black solid !important;
   }
   
   .product-button:hover {
     background-color: #00b31e !important;
-    border: 1px black solid !important;
   }
   
   .user-info {
     display: flex;
     align-items: center !important;
-    border: 1px black solid !important;
   }
 
   .user-name {
     margin: 1px 0 0 15px;
-    border: 1px black solid !important;
   }
 
   .user-avatar {
