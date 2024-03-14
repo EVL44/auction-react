@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import "./MyProducts.css";
-import Header from './Header';
+import Navbar from './Navbar';
 import Loading from './Loading';
 
 function MyProducts() {
@@ -66,7 +66,7 @@ function MyProducts() {
 
   return (
     <div>
-      <Header />
+      <Navbar />
       {loading ? ( // Display loading indicator if loading is true
             <Loading />
           ) : (

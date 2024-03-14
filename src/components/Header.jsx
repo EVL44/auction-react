@@ -16,21 +16,17 @@ function Header() {
   useEffect(() => {
     if (localStorage.getItem("user-info")) {
       const fetchData = async () => {
-        try {
-          let result = await fetch(`http://localhost:8000/api/user/${user.id}`);
-          if (!result.ok) {
-            throw new Error("Failed to fetch data");
-          }
-          result = await result.json();
-          setAvatar(result.avatar);
-          setAvatarLoaded(true); // Set avatarLoaded to true once avatar is fetched
-        } catch (error) {
-          console.error("Error fetching user data:", error);
+        let result = await fetch(`http://localhost:8000/api/user/${user.id}`);
+        if (!result.ok) {
+          throw new Error("Failed to fetch data");
         }
+        result = await result.json();
+        setAvatar(result.avatar);
+        setAvatarLoaded(true);
       };
       fetchData();
     }
-  }, [user.id]);
+  }); 
 
   function Logout() {
     localStorage.clear();

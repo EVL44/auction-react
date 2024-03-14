@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Table } from 'react-bootstrap';
 import { useLocation, useNavigate } from 'react-router-dom';
-import Header from './Header';
+import Navbar from './Navbar';
 import Loading from './Loading';
 
 
@@ -42,7 +42,7 @@ function SearchResults() {
 
   return (
     <div>
-      <Header />
+      <Navbar />
       {loading ? ( // Display loading indicator if loading is true
             <Loading />
           ) : (

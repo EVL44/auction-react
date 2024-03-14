@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Footer from "./Footer";
 import { useNavigate, Link } from "react-router-dom";
-import Header from "./Header";
+import Navbar from "./Navbar";
 import ProductCard from "./ProductCard";
-import Loading from "./Loading"; // Import the Loading component
+import Loading from "./Loading"; 
 import "./style.css";
 
 function Home() {
@@ -48,7 +48,7 @@ function Home() {
 
   return (
     <div>
-      <Header />
+      <Navbar />
       <div>
         {loading ? ( // Conditionally render loading screen
           <Loading />

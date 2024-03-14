@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./style.css";
 import "./ProductCard.css";
-import Header from "./Header";
+import Navbar from "./Navbar";
 import axios from "axios";
 import Loading from "./Loading"; // Import the Loading component
 
@@ -52,7 +52,7 @@ function ProductCard() {
               document.getElementById("remaining-time").style.color = "red"; // Change color to red
             }
           } else {
-            setRemainingTime(null); // Set remaining time to null if auction has ended
+            setRemainingTime(null); 
             setExpiredMessage("This auction has ended");
           }
         };
@@ -140,8 +140,8 @@ function ProductCard() {
 
   return (
     <div>
-      <Header />
-      {loading || userLoading ? ( // Check both loading states
+      <Navbar />
+      {loading || userLoading ? (
         <Loading />
       ) : (
         <>

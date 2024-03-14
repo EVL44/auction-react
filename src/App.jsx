@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './components/Login';
-import Navbar from './components/Navbar';
 import Register from './components/Register';
 import MyProducts from './components/MyProducts';
 import Home from './components/Home';
@@ -23,7 +22,6 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/auction-react' element={<Home />} />
           <Route path='/Home' element={<Home />} />
-          <Route path='/Navbar' element={<Navbar />} />
           <Route path='/MyProducts' element={<MyProducts/>} />
           <Route path='/Search' element={<Search/>} />
           <Route path='/AddProduct' element={ <AddProduct/> } />

@@ -1,8 +1,7 @@
-//login.jsx
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
-import Header from './Header';
+import Navbar from './Navbar';
 import './style.css';
 
 function Login() {
@@ -46,7 +45,7 @@ function Login() {
 
     return (
         <div>
-            <Header />
+            <Navbar />
             {errorMessage && <p className="error-message">{errorMessage}</p>}
             <div className='custom-cont'>
                 <div className="custom-login">

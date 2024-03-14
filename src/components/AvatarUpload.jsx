@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 import axios from "axios";
-import Header from './Header';
+import Navbar from './Navbar';
 
 function AvatarUpload() {
     let user = JSON.parse(localStorage.getItem('user-info'));
@@ -25,7 +25,7 @@ function AvatarUpload() {
 
     return (
         <div>
-            <Header/>
+            <Navbar/>
             <Form>
                 <input type="file" onChange={e => setAvatar(e.target.files[0])} className="mb-3 form-control custom-placeholder" />
                 <Button onClick={handleUpload} className="custom-btn" >Upload</Button>

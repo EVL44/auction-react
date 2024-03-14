@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 import axios from "axios";
-import Header from './Header';
+import Navbar from './Navbar';
 import './style.css';
 
 function AddProduct() {
@@ -45,7 +45,7 @@ function AddProduct() {
 
   return (
     <div>
-      <Header />
+      <Navbar />
       <div className="custom-cont">
         <div className="custom-login">
           <h1 className="font-b mb-4">Add Product</h1>
