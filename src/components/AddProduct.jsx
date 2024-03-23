@@ -1,4 +1,3 @@
-//addproduct.jsx
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
@@ -22,7 +21,7 @@ function AddProduct() {
     formData.append('description', description);
     formData.append('price', price);
     formData.append('user_id', user.id);
-    formData.append('expiration_time', expirationTime); // Add expiration time to form data
+    formData.append('expiration_time', expirationTime); 
 
     await axios.post('http://127.0.0.1:8000/api/addproduct', formData)
       .then(({ data }) => {
@@ -52,10 +51,10 @@ function AddProduct() {
           <Form>
             <input type="text" onChange={(e) => setName(e.target.value)} placeholder="Name" className="form-control mb-2 " /> <br />
             <input type="number" onChange={(e) => setPrice(e.target.value)} placeholder="Price" className="form-control mb-3 " /> <br />
-            <input type="text" onChange={(e) => setDescription(e.target.value)} placeholder="Description" className="form-control mb-3" /> <br />
-            <input type="file" onChange={(e) => setFile(e.target.files[0])} className="mb-3 form-control custom-placeholder" />
-          
-            <Button onClick={addProduct} className="custom-btn"> Done </Button>
+            <textarea onChange={(e) => setDescription(e.target.value)} placeholder="Description" className="form-control mb-3"  rows="4" /><br />
+            <input type="file" onChange={(e) => setFile(e.target.files[0])} className="mb-3 form-control custom-placeholder" /> <br />
+            <input type="datetime-local" onChange={(e) => setExpirationTime(e.target.value)} className="mb-3 form-control custom-placeholder" /> <br />
+            <Button onClick={addProduct} className="custom-btn"> Done </Button> <br /> <br /> <br />  <br /> <br />
           </Form>
 
         </div>

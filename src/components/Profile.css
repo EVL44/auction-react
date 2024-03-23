@@ -1,0 +1,182 @@
+/* Add more CSS rules as needed */
+
+/* Main container */
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90vh;
+}
+
+/* Profile info section */
+.profile-info {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  height: 200px;
+  width: 100%
+}
+
+/* Profile things section */
+.profile-things {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Profile controls section */
+.profile-controls {
+  width: 30%;
+  margin-right: 20px;
+}
+
+/* Profile actions section */
+.profile-autions {
+  background-color: rgb(229, 233, 222);
+  border-radius: 15px;
+  height: 60vh;
+  box-shadow: 10px 0px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Profile avatar */
+.profile-avatar {
+  width: 150px;
+  height: 150px;
+  margin-left: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+  border: 4px solid #222;
+  box-shadow: 1px 10px 50px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.info-avatar:hover .profile-avatar {
+  transform: scale(1.01);
+}
+
+/* Info details */
+.info-det {
+  margin-bottom: 20px;
+  margin-left: 15px;
+  display: flex;
+  width: 1200px;
+  justify-content: space-between;
+}
+
+/* Profile controls buttons */
+.profile-controls button {
+  margin-right: 10px;
+}
+
+/* AvatarEditor overlay */
+.editor-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.editor-container {
+  background-color: #fff;
+  position: fixed;
+  padding: 20px;
+  border-radius: 10px;
+  margin-left: 600px;
+  margin-top: 150px;
+  z-index: 98;
+  box-shadow: 10px 10px 1000px rgb(0, 0, 0);
+}
+
+/* Editor buttons */
+.editor-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Editor buttons */
+.editor-buttons button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Editor buttons hover */
+.editor-buttons button:hover {
+  background-color: #eee;
+}
+
+/* Save button container */
+.save-button-container {
+  margin-top: 20px;
+}
+
+/* Save button */
+.save-button-container button {
+  padding: 10px 20px !important;
+  border-radius: 5px !important;
+  background-color: #00ff1a !important;
+  color: #fff !important;
+  cursor: pointer ;
+  transition: background-color 0.3s ease !important;
+}
+
+/* Save button hover */
+.save-button-container button:hover {
+  background-color: #04690e !important;
+}
+
+/* edit and logout buttons */
+
+.edit-out-btns {
+  display: flex;
+  
+}
+
+.logout-btn {
+  background-color: #c34f5a !important;
+  border: #c34f5a !important;
+  margin-right: 40px;
+  padding: 8px 15px !important;
+  border-radius: 15px !important;
+  transition: background-color 0.5s ease !important;
+}
+
+.logout-btn:hover {
+  transform: scale(1.01);
+  background-color: #65020c !important;
+  border: #65020c !important;
+}
+
+.edit-btn {
+  background-color: #22d607 !important;
+  border: #22d607 !important;
+  margin-right: 40px;
+  padding: 8px 15px !important;
+  border-radius: 15px !important;
+  transition: background-color 0.5s ease !important;
+}
+
+.edit-btn:hover {
+  transform: scale(1.01);
+  background-color: #1f7811 !important;
+  border: #1f7811 !important;
+}
+
+@media only screen and (max-width: 1024px) {
+  .edit-out-btns {
+    display: flex;
+    flex-direction: column;
+  }
+  .edit-btn {
+    margin-bottom: 20px;
+  }
+}

@@ -103,6 +103,7 @@ ul li {
   @media only screen and (max-width: 1024px) {
     .navbar {
         position: fixed;
+        z-index: 99;
         width: 100%;
         left: 0;
         right: 0;

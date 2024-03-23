@@ -66,11 +66,11 @@ function UpdateProduct() {
           <Form>
             <input type="text" onChange={(e) => setName(e.target.value)} defaultValue={data.name} placeholder="Name" className="form-control mb-2 " /> <br />
             <input type="number" onChange={(e) => setPrice(e.target.value)} defaultValue={data.price} placeholder="Price" className="form-control mb-3 " /> <br />
-            <input type="text" onChange={(e) => setDescription(e.target.value)} defaultValue={data.description} placeholder="Description" className="form-control mb-3" /> <br />
-            <img style={{ width: 100, height: 100 }} src={"http://localhost:8000/" + data.file_path} />
-            <input type="file" onChange={(e) => setFile(e.target.files[0])} defaultValue={data.file_path} className="mb-3 form-control custom-placeholder" />
+            <textarea onChange={(e) => setDescription(e.target.value)} defaultValue={data.description} placeholder="Description" className="form-control mb-3"  rows="4" /><br />
+            <img style={{  height: 100 }} src={"http://localhost:8000/" + data.file_path} /> <br />
+            <input type="file" onChange={(e) => setFile(e.target.files[0])} defaultValue={data.file_path} className="mb-3 form-control custom-placeholder" /> <br />
 
-            <Button onClick={update} className="custom-btn"> Done </Button>
+            <Button onClick={update} className="custom-btn"> Done </Button><br /> <br /> <br />  <br /> <br />
           </Form>
 
         </div>

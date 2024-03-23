@@ -1,35 +1,50 @@
 import React, { useState } from 'react';
-import { Form, FormControl, Button } from 'react-bootstrap';
-import { AiOutlineSearch } from 'react-icons/ai';
 import { useNavigate } from 'react-router-dom';
+import {Table} from 'react-bootstrap'
 import Navbar from './Navbar';
 
 function Search() {
-  const [key, setKey] = useState('');
+  const [data, setData] = useState([]);
   const navigate = useNavigate();
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
-  function handleSearch(e) {
-    e.preventDefault();
-    navigate(`/search-results?key=${key}`);
+  async function searchResults(key) {
+    if(key.length > 0) {
+      let result = await fetch('http://localhost:8000/api/search/' + key);
+      result = await result.json();
+      setData(result);
+      console.warn(result);
+    }
+}
+
+  function handleProductClick(product) {
+    setSelectedProduct(product);
+    navigate("/ProductCard/" + product.pid);
   }
+
 
   return (
     <> 
       <Navbar/>
-
-      <Form onSubmit={handleSearch} className="d-flex align-items-center custom-search font-c">
-        <FormControl
-          type="search"
-          placeholder="Search"
-          className="custom-placeholder py-1 bg-black text-light"
-          aria-label="Search"
-          value={key}
-          onChange={(e) => setKey(e.target.value)}
-        />
-        <Button variant="outline-success" type="submit">
-          <AiOutlineSearch />
-        </Button>
-      </Form>
+      <h2 className='font-b'>Search for Products</h2>
+      <input type="text" className='form-control font-c ' placeholder='Search' onChange={(e)=>searchResults(e.target.value)} />
+      {
+        <Table bordered className='font-a'>
+            <tr style={{ height: 50 }}>
+            
+            </tr>
+            {data.map((item) => (
+              <tr key={item.id} onClick={() => handleProductClick(item)}>
+                <td>
+                  <img style={{  height: 100 }} src={`http://localhost:8000/${item.file_path}`} alt={item.name} />
+                </td>
+                <td>{item.name}</td>
+                <td>{item.price} $</td>
+                </tr>
+            ))}
+          </Table>
+      }
+      
     </>
    
   );

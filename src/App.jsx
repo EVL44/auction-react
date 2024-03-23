@@ -5,12 +5,11 @@ import Register from './components/Register';
 import MyProducts from './components/MyProducts';
 import Home from './components/Home';
 import AddProduct from './components/AddProduct';
-import AddAuction from './components/AddAuction';
 import UpdateProduct from './components/UpdateProduct';
 import Search from './components/Search';
 import SearchResults from './components/SearchResults';
 import ProductCard from './components/ProductCard';
-import AvatarUpload from './components/AvatarUpload';
+import Profile from './components/Profile';
 
 function App() {
   
@@ -25,12 +24,11 @@ function App() {
           <Route path='/MyProducts' element={<MyProducts/>} />
           <Route path='/Search' element={<Search/>} />
           <Route path='/AddProduct' element={ <AddProduct/> } />
-          <Route path='/AddAuction' element={ <AddAuction/> } />
           <Route path='/UpdateProduct/:pid' element={ <UpdateProduct/> } />
           <Route path='/Login' element={<Login />} />
           <Route path='/Register' element={<Register />} />
           <Route path='/search-results' element={<SearchResults />} />
-          <Route path='/avatarUpload' element={<AvatarUpload />} />
+          <Route path='/profile' element={<Profile />} />
         </Routes>
       </BrowserRouter>
       

@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Form } from 'react-bootstrap';
+import { Form } from "react-bootstrap";
 import { AiOutlineSearch } from "react-icons/ai";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "./Navbar.css";
-import "./style.css";
 
 function Navbar() {
   let user = JSON.parse(localStorage.getItem("user-info"));
@@ -38,11 +37,6 @@ function Navbar() {
     navRef.current.classList.toggle("responsive_nav");
   }
 
-  function handleLogout() {
-    localStorage.clear();
-    navigate("/Home");
-  }
-
   return (
     <div className="navbar font-b">
       <h3 className="logo" as={Link} to="/Home"> Logo </h3>
@@ -50,33 +44,39 @@ function Navbar() {
         <ul>
           <li><Link to='/Home' className="links">Home</Link></li>
           <li><Link to='/MyProducts' className="links">Products</Link></li>
-          <li className="profile"><Link to='/AvatarUpload' className="links">Profile</Link></li>
+          <li><Link to='/WishList' className="links">Wish List</Link></li>
+          
           <li className="search"><Link to='/Search' className="links">Search</Link></li>
+          {!localStorage.getItem("user-info") ? (
+            <>
+              <li><Link to='/Login' className="links">Login</Link></li>
+              <li><Link to='/Register' className="links">Signup</Link></li>
+            </>
+              
+          ) : (
+          <li className="profile"><Link to='/profile' className="links">Profile</Link></li>
+          )}
         </ul>
+
         <div className="search-avatar">
           <Form className="search-box" onSubmit={handleSearch}>
             <input type="search" placeholder="Search" onChange={(e) => setKey(e.target.value)} />
             <AiOutlineSearch className="search-icon" />
           </Form>
 
-          {localStorage.getItem("user-info") ? (
-            avatarLoaded ? (
-              <div className="avatar-container">
-                <Link to="/AvatarUpload" className="links">
+          {localStorage.getItem("user-info") && avatarLoaded && (
+            <div className="avatar-container">
+              <Link to="/profile" className="links">
+                {avatar ? (
                   <img src={`http://localhost:8000/${avatar}`} alt="User Avatar" className="your-avatar" />
-                </Link>
-              </div>
-            ) : (
-              <div className="avatar-placeholder"></div>
-            )
-          ) : (
-            <div>
-              <ul>
-                <li><Link to='/Login' className="links">Login</Link></li>
-                <li><Link to='/Register' className="links">Signup</Link></li>
-              </ul>
+                ) : (
+                  <img src="/public/unknown.jpg" alt="Unknown Avatar" className="your-avatar" />
+                )}
+              </Link>
             </div>
           )}
+
+          
         </div>
         
 
@@ -86,4 +86,5 @@ function Navbar() {
     </div>
   );
 }
+
 export default Navbar;

@@ -134,6 +134,10 @@ function ProductCard() {
     }
   }
 
+  function wish() {
+    console.error("still under developement");
+  }
+
   function handleIncrementChange(event) {
     setSelectedIncrement(event.target.value);
   }
@@ -146,6 +150,16 @@ function ProductCard() {
       ) : (
         <>
           {errorMessage && <p className="error-message">{errorMessage}</p>}
+          <div className="user-info">
+            {userDetails && userDetails.avatar ? (
+              <img className="user-avatar" style={{ width: 45, height: 45 }} src={`http://localhost:8000/${userDetails.avatar}`} alt="Avatar" />
+            ) : (
+              <img className="user-avatar" style={{ width: 45, height: 45 }}  src="/unknown.jpg"  />
+            )}
+            <h2 className="font-a user-name"> {userDetails ? userDetails.name : ""} </h2>
+          </div>
+          <h1 className="product-title font-b">{data.name}</h1>
+          
           <div className="product-container">
             <div className="product-image">
               <img
@@ -155,56 +169,39 @@ function ProductCard() {
               />
             </div>
             <div className="product-details">
-              <div className="user-info">
-                {userDetails && userDetails.avatar ? (
-                  <img
-                    className="user-avatar"
-                    style={{ width: 45, height: 45 }}
-                    src={`http://localhost:8000/${userDetails.avatar}`}
-                    alt="Avatar"
-                  />
-                ) : (
-                  <img
-                    className="user-avatar"
-                    style={{ width: 45, height: 45 }}
-                    src="/unknown.jpg"
-                  />
-                )}
-                <h2 className="font-c user-name">
-                  {userDetails ? userDetails.name : "..."}
-                </h2>
-              </div>
-              <h1 className="product-title">{data.name}</h1>
-              <p className="product-description">{data.description}</p>
-              <div className="product-price">
+              
+              <div className="product-price font-c">
                 <span className="product-price-label">Price : </span>
                 <span className="product-price-value">${price}</span>
               </div>
-              <div className="product-time">
+              <div className="product-time font-c">
                 <span className="product-time-label">Time Left : </span>
                 <span className="product-time-value" id="remaining-time">
                   {remainingTime}
                 </span>
               </div>
-              {expiredMessage && <p className="red-text">{expiredMessage}</p>}
+              {expiredMessage && <p className="red-text font-c">{expiredMessage}</p>}
               {!expiredMessage && (
-                <>
-                  <input
-                    type="number"
-                    value={selectedIncrement}
-                    onChange={handleIncrementChange}
-                    placeholder="Enter increment amount"
-                    className="form-control"
-                  />
+                <div className="make-offer">
+                  <input type="number" value={selectedIncrement} onChange={handleIncrementChange} placeholder="Enter increment amount" className="form-control incr-pay"/>
                   {user && user.id === data.user_id ? (
-                    <button className="product-button" disabled> Buy Now </button>
+                    <>
+                      <button onClick={auction} className="product-button font-b"> Place a Bit </button>
+                      <button onClick={wish} className="product-button font-b">  Wish List </button>
+                    </>
                   ) : (
-                    <button onClick={auction} className="product-button"> Buy Now </button>
+                    <>
+                      <button onClick={auction} className="product-button font-b"> Place a Bit </button>
+                      <button onClick={wish} className="product-button font-b">  Wish List </button>
+                    </>
                   )}
-                </>
+                </div>
               )}
             </div>
           </div>
+          <h1 className="product-title font-b">Description</h1>
+          <p className="product-description font-c">{data.description}</p>
+          <br /><br /><br /><br /><br />
         </>
       )}
     </div>
