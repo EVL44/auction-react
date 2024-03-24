@@ -1,0 +1,44 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.rh{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.product-container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: flex-start; 
+    margin: 0 auto; 
+    gap: 10px;
+    max-width: 1200px; 
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .product-container {
+        justify-content: center; /* Center items on smaller screens */
+    }
+    .Card {
+        width: calc(50% - 16px); /* Two cards per row with some margin */
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .Card {
+        width: calc(33.33% - 16px); /* Three cards per row with some margin */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .Card {
+        width: calc(50% - 16px); /* Two cards per row with some margin */
+    }
+}

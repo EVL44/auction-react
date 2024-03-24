@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
+import { Button ,Alert } from 'react-bootstrap';
 import Navbar from './Navbar';
 import './style.css';
 
@@ -46,7 +46,7 @@ function Login() {
     return (
         <div>
             <Navbar />
-            {errorMessage && <p className="error-message">{errorMessage}</p>}
+            {errorMessage && <Alert variant="danger"> {errorMessage} </Alert> }
             <div className='custom-cont'>
                 <div className="custom-login">
                     <h1 className='font-b mb-5'>Login</h1>

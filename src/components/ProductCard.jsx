@@ -174,28 +174,30 @@ function ProductCard() {
                 <span className="product-price-label">Price : </span>
                 <span className="product-price-value">${price}</span>
               </div>
-              <div className="product-time font-c">
-                <span className="product-time-label">Time Left : </span>
-                <span className="product-time-value" id="remaining-time">
-                  {remainingTime}
-                </span>
-              </div>
+              
               {expiredMessage && <p className="red-text font-c">{expiredMessage}</p>}
               {!expiredMessage && (
-                <div className="make-offer">
-                  <input type="number" value={selectedIncrement} onChange={handleIncrementChange} placeholder="Enter increment amount" className="form-control incr-pay"/>
-                  {user && user.id === data.user_id ? (
-                    <>
-                      <button onClick={auction} className="product-button font-b"> Place a Bit </button>
-                      <button onClick={wish} className="product-button font-b">  Wish List </button>
-                    </>
-                  ) : (
-                    <>
-                      <button onClick={auction} className="product-button font-b"> Place a Bit </button>
-                      <button onClick={wish} className="product-button font-b">  Wish List </button>
-                    </>
-                  )}
-                </div>
+                <>
+                  <div className="product-time font-c">
+                    <span className="product-time-label">Time Left : </span>
+                    <span className="product-time-value" id="remaining-time">  {remainingTime} </span>
+                  </div>
+                  <div className="make-offer">
+                    <input type="number" value={selectedIncrement} onChange={handleIncrementChange} placeholder="Enter increment amount" className="form-control incr-pay"/>
+                    {user && user.id === data.user_id ? (
+                      <>
+                        <button onClick={auction} className="product-button font-b"> Place a Bit </button>
+                        <button onClick={wish} className="product-button font-b">  Wish List </button>
+                      </>
+                    ) : (
+                      <>
+                        <button onClick={auction} className="product-button font-b"> Place a Bit </button>
+                        <button onClick={wish} className="product-button font-b">  Wish List </button>
+                      </>
+                    )}
+                  </div>
+                </>
+                
               )}
             </div>
           </div>

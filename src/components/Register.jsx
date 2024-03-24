@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Alert  } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
 import './style.css';
@@ -95,7 +95,7 @@ function Register() {
     return (
         <div>
             <Navbar />
-            {error && <div className="error-message">{error}</div>}
+            {error && <Alert variant="danger"> {error} </Alert> }
             <div className='custom-cont'>
                 <div className="custom-signup">
                     <h1 className='mb-5 font-b'>Get Started</h1>

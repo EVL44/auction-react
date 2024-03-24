@@ -93,6 +93,11 @@
   .product-button:hover {
     background-color: #2c2a2a !important;
   }
+
+  .make-offer {
+    display: flex;
+    flex-direction: column;
+  }
   
   .user-info {
     margin-left: 20px;
