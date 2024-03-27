@@ -12,6 +12,7 @@ function MyProducts() {
 
   const navigate = useNavigate();
   const [data, setData] = useState([]);
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const [loading, setLoading] = useState(true); // Add loading state
 
   useEffect(() => {
@@ -65,6 +66,11 @@ function MyProducts() {
     }
   }, []);
 
+  function handleProductClick(product) {
+    setSelectedProduct(product);
+    navigate("/ProductCard/" + product.pid);
+  };
+
   return (
     <div>
       <Navbar />
@@ -83,11 +89,11 @@ function MyProducts() {
               </thead>
               <tbody>
                 {data.map((item) =>
-                  <tr key={item.pid}>
+                  <tr key={item.pid} onClick={() => handleProductClick(item)}>
                     <td><img style={{ height: 100 }} src={"http://localhost:8000/" + item.file_path} alt={item.name} /></td>
-                    <td>{item.name}</td>
+                    <td>{item.name.length > 35 ? `${item.name.substring(0, 35)}...` : item.name}</td>
                     <td>{item.price} $</td>
-                    <td>
+                    <td className='ops'>
                       <Button as={Link} to={"/UpdateProduct/" + item.pid} className='custom-update'>
                         <FontAwesomeIcon icon={faEdit} />
                       </Button>
@@ -104,6 +110,7 @@ function MyProducts() {
         <br /> <br />
       </div>
       )}
+      {selectedProduct && <ProductCard product={selectedProduct} />}
     </div>
   );
 }

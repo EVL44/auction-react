@@ -13,7 +13,6 @@ function Search() {
       let result = await fetch('http://localhost:8000/api/search/' + key);
       result = await result.json();
       setData(result);
-      console.warn(result);
     }
 }
 

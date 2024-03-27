@@ -39,12 +39,12 @@ function Navbar() {
 
   return (
     <div className="navbar font-b">
-      <h3 className="logo" as={Link} to="/Home"> Logo </h3>
+      <h3 className="logo" as={Link} to="/Home"> 911 </h3>
       <nav className="cont" ref={navRef} >
         <ul>
           <li><Link to='/Home' className="links">Home</Link></li>
           <li><Link to='/MyProducts' className="links">Products</Link></li>
-          <li><Link to='/WishList' className="links">Wish List</Link></li>
+          <li><Link to='/wishlist' className="links">Wish List</Link></li>
           
           <li className="search"><Link to='/Search' className="links">Search</Link></li>
           {!localStorage.getItem("user-info") ? (

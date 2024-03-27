@@ -63,11 +63,12 @@ function SearchResults() {
                 <td>
                   <img style={{ height: 100 }} src={`http://localhost:8000/${item.file_path}`} alt={item.name} />
                 </td>
-                <td>{item.name}</td>
+                <td>{item.name.length > 35 ? `${item.name.substring(0, 35)}...` : item.name}</td>
                 <td>{item.price} $</td>
               </tr>
             ))}
           </Table>
+          
           <Table bordered className="col-sm-6 off-sm-3" >
             <tr style={{ height: 50 }}>
               

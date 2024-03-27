@@ -10,6 +10,7 @@ import Search from './components/Search';
 import SearchResults from './components/SearchResults';
 import ProductCard from './components/ProductCard';
 import Profile from './components/Profile';
+import WishList from './components/WishList';
 
 function App() {
   
@@ -29,6 +30,7 @@ function App() {
           <Route path='/Register' element={<Register />} />
           <Route path='/search-results' element={<SearchResults />} />
           <Route path='/profile' element={<Profile />} />
+          <Route path='/wishlist' element={<WishList />} />
         </Routes>
       </BrowserRouter>
       

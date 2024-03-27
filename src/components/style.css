@@ -13,3 +13,324 @@
   font-family: 'Roboto Condensed', sans-serif !important;
   letter-spacing: 1px;
 }
+
+
+/* head */
+.custom-head {
+  width: 100% !important;
+  background-color: rgb(17, 17, 17);
+  display: flex;
+  align-items: center;
+}
+
+.custom-brand {
+  color: white !important;
+  /*font-weight: bold !important;*/
+  margin-right: 20% !important;
+  margin-left: 30px !important;
+}
+
+.custom-placeholder::placeholder {
+  color: lightgray !important;
+  font-size: 14px !important;
+}
+
+/* links */
+.custom-links {
+  display: flex !important;
+  margin-right: auto !important;
+  width: auto !important;
+}
+
+.custom-routlinks {
+  text-decoration: none !important;
+  color: white !important;
+  padding: 30px 0;
+}
+
+.custom-droproutlinks {
+  text-decoration: none !important;
+  width: 150px !important;
+  color: black !important;
+}
+
+/* search */
+.custom-search {
+  margin-right: 20% !important;
+  width: 300px !important;
+}
+
+
+/* container of the sign up */
+.custom-signup {
+  width: 40%;
+  margin-right: 30px;
+}
+
+/* container of the login */
+.custom-login {
+  width: 40%;
+}
+
+/* the container of the form sign up and login */
+.custom-cont {
+  margin: 100px 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* error message */
+
+.error-message {
+  background-color: red;
+  color: white;
+
+}
+
+/* the image in the registration page */
+.custom-sideimg {
+  width: 45%;
+}
+
+/* the carts in the home page */
+
+.product-container {
+  display: flex !important;
+  margin-bottom: 20px !important;
+}
+
+.product-card {
+  width: 200px;
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.product-card:hover {
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* responsive */
+@media (max-width: 1024px) {
+  .custom-links {
+    margin-left: 0 !important;
+
+  }
+
+  .custom-search {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+  .custom-sideimg {
+    width: 80% !important;
+  }
+
+  .custom-cont {
+    width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .custom-login {
+    width: 80% !important; 
+  }
+
+  .custom-signup {
+    margin-bottom: 50px !important;
+    width: 70% !important;
+  }
+
+  .input {
+    width: calc(100% - 20px) !important;
+  }
+
+  .bar {
+    width: calc(100% - 20px) !important;
+  }
+
+  .highlight {
+    width: calc(100% - 20px) !important; 
+  }
+
+}
+
+/* buttons */
+.custom-btn {
+  background-color: rgb(17, 17, 17) !important;
+  border: 0px rgb(17, 17, 17) !important;
+  width: 100% !important;
+  border-radius: 20px !important;
+  padding: 10px !important;
+}
+
+.custom-add {
+  background-color: rgb(15, 192, 15) !important;
+  border: 0px rgb(15, 192, 15) !important;
+}
+
+.custom-delete {
+  background-color: red !important;
+  border: 0px red !important;
+  color: white !important;
+  margin-left: 10px !important;
+  padding: 5px 15px !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+}
+
+.custom-update {
+  background-color: rgb(255, 191, 0) !important;
+  border: 0px rgb(255, 191, 0) !important;
+  color: white !important;
+  padding: 5px 15px !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+}
+
+/* Footer.css */
+
+.footer {
+  background-color: rgb(17, 17, 17);
+  ;
+  color: white;
+  padding: 30px 0;
+}
+
+.footer h4 {
+  color: #ffc107;
+  /* Yellow color for headers */
+}
+
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer ul li a {
+  text-decoration: none;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.footer-bottom {
+  background-color: rgb(17, 17, 17);
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+}
+
+/* text fields in login and signup form from uiverse --------------------------------------------------- */
+.group {
+  position: relative;
+ }
+
+ .input {
+  font-size: 16px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 600px;
+  border: none;
+  border-bottom: 1px solid #515151;
+  background: transparent;
+ }
+
+ .input:focus {
+  outline: none;
+ }
+
+ label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+ }
+
+ .input:focus ~ label, .input:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: rgb(17, 17, 17);
+ }
+
+ .bar {
+  position: relative;
+  display: block;
+  width: 600px;
+ }
+
+ .bar:before, .bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: rgb(17, 17, 17);
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+ }
+
+ .bar:before {
+  left: 50%;
+ }
+
+ .bar:after {
+  right: 50%;
+ }
+
+ .input:focus ~ .bar:before, .input:focus ~ .bar:after {
+  width: 50%;
+ }
+
+ .highlight {
+  position: absolute;
+  height: 60%;
+  width: 600px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+ }
+
+ .input:focus ~ .highlight {
+  animation: inputHighlighter 0.3s ease;
+ }
+
+ @keyframes inputHighlighter {
+  from {
+   background: rgb(17, 17, 17);
+  }
+
+  to {
+   width: 0;
+   background: transparent;
+  }
+ }
+
+
+/* Avatar design -------------------------------------------------------------------------*/
+
+.avatar {
+  border-radius: 50%;
+  border: 3px white solid ;
+  margin-left: 10px;
+}
