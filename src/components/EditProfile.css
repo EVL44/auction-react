@@ -1,0 +1,101 @@
+
+.Profile-Title {
+    color: rgb(128, 26, 218);
+}
+
+.container {
+    width: 400vh;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+  }
+  
+  .sidebar {
+    width: 300px;
+    height: 100%;
+    background-color: rgb(128, 26, 218);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    color: white;
+  }
+  
+  .sidebar-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  
+  .edit-profile-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .edit-profile-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .edit-profile-button:focus {
+    outline: none;
+  }
+  
+  .content {
+    margin-left: 20px;
+  }
+  
+  .Profile-Container {
+    padding: 20px;
+    width: 400px;
+  }
+  
+  .Profile-Avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+
+  .Inputs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-control {
+    width: 100% !important;
+    margin-bottom: 10px !important;
+  }
+  
+  .update-btn {
+    background-color: rgb(128, 26, 218) !important;
+    border: rgb(128, 26, 218) !important;
+    color: white !important;
+    padding: 8px 12px !important;
+    margin-right: 20px;
+  }
+
+  .update-btn:hover {
+    background-color: rgb(75, 6, 136) !important;
+    border: rgb(75, 6, 136) !important;
+  }
+
+  .cancel-btn {
+    background-color: rgb(218, 26, 26) !important;
+    border: rgb(218, 26, 26) !important;
+    color: white !important;
+    padding: 8px 12px !important;
+    margin-right: 20px;
+  }
+
+  .cancel-btn:hover {
+    background-color: rgb(141, 8, 8) !important;
+    border: rgb(141, 8, 8) !important;
+  }

@@ -89,8 +89,8 @@ function MyProducts() {
               </thead>
               <tbody>
                 {data.map((item) =>
-                  <tr key={item.pid} onClick={() => handleProductClick(item)}>
-                    <td><img style={{ height: 100 }} src={"http://localhost:8000/" + item.file_path} alt={item.name} /></td>
+                  <tr key={item.pid}>
+                    <td><img style={{ height: 100 }}  onClick={() => handleProductClick(item)} src={"http://localhost:8000/" + item.file_path} alt={item.name} /></td>
                     <td>{item.name.length > 35 ? `${item.name.substring(0, 35)}...` : item.name}</td>
                     <td>{item.price} $</td>
                     <td className='ops'>

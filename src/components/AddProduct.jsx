@@ -49,11 +49,17 @@ function AddProduct() {
         <div className="custom-login">
           <h1 className="font-b mb-4">Add Product</h1>
           <Form>
+            <h4 className='font-b'> Title </h4>
             <input type="text" onChange={(e) => setName(e.target.value)} placeholder="Name" className="form-control mb-2 " /> <br />
+            <h4 className='font-b'> Price </h4>
             <input type="number" onChange={(e) => setPrice(e.target.value)} placeholder="Price" className="form-control mb-3 " /> <br />
+            <h4 className='font-b'> Description </h4>
             <textarea onChange={(e) => setDescription(e.target.value)} placeholder="Description" className="form-control mb-3"  rows="4" /><br />
+            <h4 className='font-b'> Image </h4>
             <input type="file" onChange={(e) => setFile(e.target.files[0])} className="mb-3 form-control custom-placeholder" /> <br />
+            <h4 className='font-b'> End Time </h4>
             <input type="datetime-local" onChange={(e) => setExpirationTime(e.target.value)} className="mb-3 form-control custom-placeholder" /> <br />
+            
             <Button onClick={addProduct} className="custom-btn"> Done </Button> <br /> <br /> <br />  <br /> <br />
           </Form>
 

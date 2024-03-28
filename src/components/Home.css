@@ -20,7 +20,8 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 25px;
-    background-color: rgb(127, 193, 255);
+    background-color: rgb(145, 59, 220);
+    color: white;
 }
 
 
@@ -33,6 +34,9 @@
     max-width: 1200px; 
 }
 
+.Card {
+    cursor: pointer;
+}
 
 @media only screen and (max-width: 1024px) {
     .product-container {

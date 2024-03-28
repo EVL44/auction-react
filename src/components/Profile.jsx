@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import { Link,useNavigate } from "react-router-dom";
+import { Button, Table } from 'react-bootstrap';
 import { FaUpload, FaSignOutAlt, FaTimes, FaSave, FaEdit } from "react-icons/fa";
 import axios from "axios";
 import Navbar from "./Navbar";
@@ -20,6 +20,8 @@ function Profile() {
   const [showCancelButton, setShowCancelButton] = useState(false);
   const [showEditor, setShowEditor] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [data, setData] = useState([]);
+  
 
   useEffect(() => {
     if (localStorage.getItem("user-info")) {
@@ -40,6 +42,25 @@ function Profile() {
       fetchData();
     }
   }, [user.id]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        let user = JSON.parse(localStorage.getItem('user-info'));
+        if (!user) {
+          return;
+        }
+        let result = await fetch('http://localhost:8000/api/user/' + user.id + '/products');
+        result = await result.json();
+        setData(result);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   useEffect(() => {
     const fetchUserInfo = async () => {
@@ -107,6 +128,17 @@ function Profile() {
     setShowCancelButton(false);
   }
 
+  function getProductStatus(expirationTime) {
+    const now = new Date().getTime();
+    const distance = expirationTime - now;
+
+    if (distance > 0) {
+      return "Active";
+    } else {
+      return "Expired";
+    }
+  }
+
   return (
     <>
       <Navbar />
@@ -139,8 +171,10 @@ function Profile() {
               <div className="info-det">
                 <h1 className="font-a">{userInfo && userInfo.name}</h1>
                 <div className="edit-out-btns">
-                  <Button className="font-c edit-btn"><FaEdit /> Edit </Button>
+                <Button as={Link} to={"/EditProfile/" + user.id} className="font-c edit-btn"><FaEdit /> Edit</Button>
                   <Button className="font-c logout-btn" onClick={handleLogout}><FaSignOutAlt /> Log out</Button>
+              
+              
                 </div>
               </div>
             </div>
@@ -148,8 +182,29 @@ function Profile() {
               <div className="profile-controls">
                 <input id="fileInput" type="file" style={{ display: "none" }} onChange={(e) => handleUpload(e.target.files)} />
               </div>
-              <div className="profile-autions">
-                <h2>Your Current Auctions</h2>
+              <div className="profile-actions">
+                <h2>Your Auctions</h2>
+                <Table>
+                  <thead className="thead-dark">
+                    <tr color="red">
+                      <th scope="col">Image</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Price</th>
+                      <th scope="col">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {data.map((item, index) => (
+                      <tr key={item.pid}>
+                        <th><img style={{ height: 100 }} src={"http://localhost:8000/" + item.file_path} alt={item.name} /></th>
+                        <td>{item.name}</td>
+                        <td>{item.price} MAD</td>
+                        <td>{getProductStatus(new Date(item.expiration_time).getTime())}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </Table>
+
               </div>
             </div>
           </div>
