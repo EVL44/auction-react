@@ -179,7 +179,7 @@ function ProductCard() {
       {loading || userLoading ? (
         <Loading />
       ) : (
-        <>
+        <div className="all">
           {errorMessage && <Alert variant="danger"> {errorMessage} </Alert> }
           <div className="user-info">
             {userDetails && userDetails.avatar ? (
@@ -208,7 +208,7 @@ function ProductCard() {
               
               
               {!expired ? (
-                <>
+                <div className="porduct-make">
                   <div className="product-time font-c">
                     <span className="product-time-label">Time Left : </span>
                     <span className="product-time-value" id="remaining-time">  {remainingTime} </span>
@@ -220,7 +220,7 @@ function ProductCard() {
                     <button onClick={auction} className="product-button font-b"> <FaCreditCard />  Place a Bit </button>
                     <button onClick={addToWishList} className="product-button font-b">{save ? <FaBookmark/> : <FaRegBookmark/>}  Wish List </button>
                   </div>
-                </>
+                </div>
               ) : (
                 <>
                   {expiredMessage && <Alert variant="danger"> {expiredMessage}  {buyerDetails ? buyerDetails.name : "Unknown"}  </Alert> }
@@ -232,7 +232,7 @@ function ProductCard() {
           <h1 className="product-title font-b">Description</h1>
           <p className="product-description font-c">{data.description}</p>
           <br /><br /><br /><br /><br />
-        </>
+        </div>
       )}
     </div>
   );

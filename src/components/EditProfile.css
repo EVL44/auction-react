@@ -1,6 +1,6 @@
 
 .Profile-Title {
-    color: rgb(128, 26, 218);
+    color: rgb(26, 132, 218) !important;
 }
 
 .container {
@@ -13,7 +13,7 @@
   .sidebar {
     width: 300px;
     height: 100%;
-    background-color: rgb(128, 26, 218);
+    background-color: rgb(26, 132, 218) !important;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -75,16 +75,16 @@
   }
   
   .update-btn {
-    background-color: rgb(128, 26, 218) !important;
-    border: rgb(128, 26, 218) !important;
+    background-color: rgb(26, 132, 218) !important;
+    border: rgb(26, 132, 218) !important;
     color: white !important;
     padding: 8px 12px !important;
     margin-right: 20px;
   }
 
   .update-btn:hover {
-    background-color: rgb(75, 6, 136) !important;
-    border: rgb(75, 6, 136) !important;
+    background-color: rgb(13, 79, 133) !important;
+    border: rgb(13, 79, 133)  !important;
   }
 
   .cancel-btn {

@@ -10,6 +10,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    background-color: #F1EEF4;
 }
 
 .display-card {
@@ -20,7 +21,7 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 25px;
-    background-color: rgb(145, 59, 220);
+    background-color: rgb(26, 132, 218);
     color: white;
 }
 
@@ -36,6 +37,17 @@
 
 .Card {
     cursor: pointer;
+}
+
+.getnow-btn {
+    background-color: rgb(26, 132, 218)!important;
+    border: rgb(26, 132, 218)!important;
+    color: white !important;
+}
+
+.getnow-btn:hover{
+    background-color: rgb(20, 102, 169) !important;   
+    border: rgb(26, 132, 218) !important;
 }
 
 @media only screen and (max-width: 1024px) {

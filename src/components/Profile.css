@@ -69,8 +69,8 @@
   border: #65020c !important;
 }
 .edit-btn {
-  background-color: rgb(128, 26, 218) !important;
-  border: rgb(128, 26, 218)!important;
+  background-color: rgb(26, 132, 218) !important;
+  border: rgb(26, 132, 218) !important;
   margin-left: 10px;
   border-radius: 10px !important;
   transition: background-color 0.5s ease !important;
@@ -78,8 +78,8 @@
 
 .edit-btn:hover {
   transform: scale(1.01);
-  background-color: rgb(94, 11, 167) !important;
-  border: rgb(96, 9, 173) !important;
+  background-color: rgb(23, 103, 168) !important;
+  border: rgb(23, 103, 168) !important;
 }
 /* Profile things section */
 .profile-things {

@@ -77,23 +77,23 @@ function MyProducts() {
       {loading ? ( 
             <Loading />
           ) : (
-      <div className='d-flex flex-column align-items-center font-a'>
-        <h1> Product List </h1>  <br />
+      <div className='d-flex flex-column align-items-center font-a bggg'>
+        <h1 className='title22'> Product List </h1>  <br />
         <div className=' col-sm-8 off-sm-2 '>
           <Button className='custom-add' as={Link} to="/AddProduct" > <FaPlus /> Add Product </Button>
           
-            <Table>
+            <Table className='ttt'>
               <thead>
                 <tr style={{ height: 50 }} >
                 </tr>
               </thead>
               <tbody>
                 {data.map((item) =>
-                  <tr key={item.pid}>
+                  <tr key={item.pid} className='rowww'>
                     <td><img style={{ height: 100 }}  onClick={() => handleProductClick(item)} src={"http://localhost:8000/" + item.file_path} alt={item.name} /></td>
                     <td>{item.name.length > 35 ? `${item.name.substring(0, 35)}...` : item.name}</td>
-                    <td>{item.price} $</td>
-                    <td className='ops'>
+                    <td>{item.price} MAD</td>
+                    <td className=''>
                       <Button as={Link} to={"/UpdateProduct/" + item.pid} className='custom-update'>
                         <FontAwesomeIcon icon={faEdit} />
                       </Button>

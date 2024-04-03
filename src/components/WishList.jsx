@@ -66,8 +66,8 @@ function WishList() {
       {loading ? ( 
         <Loading />
       ) : (
-        <div className='d-flex flex-column align-items-center font-a'>
-          <h1> WishList </h1>  <br />
+        <div className='d-flex flex-column align-items-center font-a bggg'>
+          <h1 className='mt-5 mb-5 title22'> WishList </h1>  <br />
           <div className=' col-sm-8 off-sm-2 '>
             <Table >
               <thead>

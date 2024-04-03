@@ -52,7 +52,7 @@ function Home() {
                   <Card.Body>
                     <Card.Title>{item.name.length > 35 ? `${item.name.substring(0, 35)}...` : item.name}</Card.Title>
                     <Card.Text> ${item.price} </Card.Text>
-                    <Button variant="dark">get it now</Button>
+                    <Button className="getnow-btn">get it now</Button>
                   </Card.Body>
                 </Card>
               )}
