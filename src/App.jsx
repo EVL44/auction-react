@@ -33,6 +33,9 @@ function App() {
           <Route path='/profile' element={<Profile />} />
           <Route path='/wishlist' element={<WishList />} />
           <Route path='/EditProfile/:id' element={<EditProfile />} />
+
+          {/* Test the  routes below to see how they work */}
+          
         </Routes>
       </BrowserRouter>
       

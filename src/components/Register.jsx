@@ -96,42 +96,44 @@ function Register() {
         <div>
             <Navbar />
             {error && <Alert variant="danger"> {error} </Alert> }
-            <div className='custom-cont'>
-                <div className="custom-signup">
-                    <h1 className='mb-5 font-b'>Get Started</h1>
+            <div className="back">
+                <div className='custom-cont-signup'>
+                    <div className="custom-signup">
+                        <h1 className='mb-5 font-b tit'>Get Started</h1>
 
-                    <div className="group">
-                        <input type="text" value={name} onChange={(e) => setName(e.target.value)} className="input mt-3" required />
-                        <span className="highlight"></span>
-                        <span className="bar"></span>
-                        <label className='font-b'>Username</label>
-                    </div> <br />
+                        <div className="group">
+                            <input type="text" value={name} onChange={(e) => setName(e.target.value)} className="input mt-3" required />
+                            <span className="highlight"></span>
+                            <span className="bar"></span>
+                            <label className='font-b'>Username</label>
+                        </div> <br />
 
-                    <div className="group">
-                        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="input mt-3" required />
-                        <span className="highlight"></span>
-                        <span className="bar"></span>
-                        <label className='font-b'>Email</label>
-                    </div> <br />
+                        <div className="group">
+                            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="input mt-3" required />
+                            <span className="highlight"></span>
+                            <span className="bar"></span>
+                            <label className='font-b'>Email</label>
+                        </div> <br />
 
-                    <div className="group">
-                        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="input mt-3" required />
-                        <span className="highlight"></span>
-                        <span className="bar"></span>
-                        <label className='font-b'>Password</label>
-                    </div> <br />
+                        <div className="group">
+                            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="input mt-3" required />
+                            <span className="highlight"></span>
+                            <span className="bar"></span>
+                            <label className='font-b'>Password</label>
+                        </div> <br />
 
-                    <div className="group">
-                        <input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} className="input mt-3" required />
-                        <span className="highlight"></span>
-                        <span className="bar"></span>
-                        <label className='font-b'>Confirm Password</label>
-                    </div> <br />
+                        <div className="group">
+                            <input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} className="input mt-3" required />
+                            <span className="highlight"></span>
+                            <span className="bar"></span>
+                            <label className='font-b'>Confirm Password</label>
+                        </div> <br />
 
-                    <Button onClick={signup} className="custom-btn mt-5 mb-5 font-b"> Sign Up </Button> <br /> <br /> <br />
+                        <Button onClick={signup} className="custom-btn mt-5 mb-5 font-b"> Sign Up </Button> 
+                    </div>
+
+                    <img src='/public/register.png' className="custom-sideimg" fluid />
                 </div>
-
-                <img src='https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp' className="custom-sideimg" fluid />
             </div>
         </div>
 

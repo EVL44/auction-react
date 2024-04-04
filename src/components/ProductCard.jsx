@@ -203,7 +203,7 @@ function ProductCard() {
               
               <div className="product-price font-c">
                 <span className="product-price-label">Price : </span>
-                <span className="product-price-value">${price}</span>
+                <span className="product-price-value">{price} MAD</span>
               </div>
               
               

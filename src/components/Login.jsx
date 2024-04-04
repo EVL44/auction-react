@@ -47,9 +47,9 @@ function Login() {
         <div>
             <Navbar />
             {errorMessage && <Alert variant="danger"> {errorMessage} </Alert> }
-            <div className='custom-cont'>
+            <div className='custom-cont-login'>
                 <div className="custom-login">
-                    <h1 className='font-b mb-5'>Login</h1>
+                    <h1 className='font-b mb-5 tit'>Login</h1>
 
                     <div className="group">
                         <input type="email" id="email" onChange={(e) => setEmail(e.target.value)} className="input mt-3" required/>

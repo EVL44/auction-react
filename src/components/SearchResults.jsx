@@ -3,6 +3,7 @@ import { Table } from 'react-bootstrap';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
 import Loading from './Loading';
+import "./style.css";
 
 
 function SearchResults() {
@@ -52,37 +53,45 @@ function SearchResults() {
             <Loading />
           ) : (
       <div className="d-flex flex-column align-items-center font-a">
-        <h1>Results</h1> <br />
-        <div className="col-sm-8 off-sm-2">
-          <Table bordered >
-            <tr style={{ height: 50 }}>
-              
-            </tr>
-            {products.map((item) => (
-              <tr key={item.id} onClick={() => handleProductClick(item)}>
-                <td>
-                  <img style={{ height: 100 }} src={`http://localhost:8000/${item.file_path}`} alt={item.name} />
-                </td>
-                <td>{item.name.length > 35 ? `${item.name.substring(0, 35)}...` : item.name}</td>
-                <td>{item.price} $</td>
-              </tr>
-            ))}
-          </Table>
+        { (products.length > 0 || users.length > 0) ? (
           
-          <Table bordered className="col-sm-6 off-sm-3" >
-            <tr style={{ height: 50 }}>
-              
-            </tr>
-            {users.map((user) => (
-              <tr key={user.id} onClick={() => handleProductClick(item)}>
-                <td>
-                  <img  style={{ borderRadius: 50 , height: 100 }} src={`http://localhost:8000/${user.avatar}`} alt={user.name} />
-                </td>
-                <td>{user.name}</td>
+          <div className="col-sm-8 off-sm-2">
+            <h1 className='tit'>Results</h1> <br />
+            <Table bordered >
+              <tr style={{ height: 50 }}>
+                
               </tr>
-            ))}
-          </Table>
-        </div>
+              {products.map((item) => (
+                <tr key={item.id} onClick={() => handleProductClick(item)}>
+                  <td>
+                    <img style={{ height: 100 }} src={`http://localhost:8000/${item.file_path}`} alt={item.name} />
+                  </td>
+                  <td>{item.name.length > 35 ? `${item.name.substring(0, 35)}...` : item.name}</td>
+                  <td>{item.price} $</td>
+                </tr>
+              ))}
+            </Table>
+            
+            <Table bordered className="col-sm-6 off-sm-3" >
+              <tr style={{ height: 50 }}>
+                
+              </tr>
+              {users.map((user) => (
+                <tr key={user.id} onClick={() => handleProductClick(item)}>
+                  <td>
+                    <img  style={{ borderRadius: 50 , height: 100 }} src={`http://localhost:8000/${user.avatar}`} alt={user.name} />
+                  </td>
+                  <td>{user.name}</td>
+                </tr>
+              ))}
+            </Table>
+          </div>
+        ):( 
+        <div className="nores">
+          <h1 className='tit'> no Result</h1>
+          <img src="/public/search.png" alt="no result" className='undrow' />
+        </div> ) }
+        
         <br /> <br />
       </div>
       )}

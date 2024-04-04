@@ -39,7 +39,7 @@ function Navbar() {
 
   return (
     <div className="navbar font-b">
-      <h3 className="logo" as={Link} to="/Home"> 911 </h3>
+      <h3 className="logo" as={Link} to="/Home"> 99 </h3>
       <nav className="cont" ref={navRef} >
         <ul>
           <li><Link to='/Home' className="links">Home</Link></li>

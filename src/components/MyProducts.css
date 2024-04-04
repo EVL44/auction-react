@@ -1,6 +1,6 @@
 .custom-btn {
-  background-color: rgb(17, 17, 17) !important;
-  border: 0px rgb(17, 17, 17) !important;
+  background-color: rgb(15, 20, 24) !important;
+  border: 0px rgb(15, 20, 24) !important;
   width: 100% !important;
   border-radius: 20px !important;
   padding: 10px !important;
@@ -18,11 +18,15 @@
 
 .bggg {
   background-color: #F1EEF4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-items: center;
 }
 
 .title22 {
   margin-top: 25px;
-  color: rgb(26, 132, 218);
+  color: rgb(15, 20, 24) ;
 }
 
 .custom-add {
@@ -50,7 +54,23 @@
   cursor: pointer !important;
 }
 
-.ops {
-  display: flex;
-  justify-content: space-around; 
+.shwimg {
+  height: 130px;
+}
+
+@media (max-width: 1024px) {
+  .prc {
+    visibility: hidden;
+  }
+
+  .shwimg {
+    height: 60px;
+  }
+
+  .ops {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; 
+    align-items: center;
+  }
 }

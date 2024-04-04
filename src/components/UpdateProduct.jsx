@@ -59,19 +59,18 @@ function UpdateProduct() {
   return (
     <div>
       <Navbar />
-      <div className="custom-cont">
-        <div className="custom-login">
-          <h1 className="font-b mb-4">Update Product</h1>
+      <div className="custom-cont-updpro">
+        <div className="custom-updpro">
+          <h1 className="font-b mb-4 tit">Update Product</h1>
 
           <Form>
-            <img className='update-img' src={"http://localhost:8000/" + data.file_path} /> <br /><br /><br />
-            <h4 className='font-b'> Title </h4>
+            <h4 className='font-b tit'> Title </h4>
             <input type="text" onChange={(e) => setName(e.target.value)} defaultValue={data.name} placeholder="Name" className="form-control mb-2 " /> <br />
-            <h4 className='font-b'> Price </h4>
+            <h4 className='font-b tit'> Price </h4>
             <input type="number" onChange={(e) => setPrice(e.target.value)} defaultValue={data.price} placeholder="Price" className="form-control mb-3 " /> <br />
-            <h4 className='font-b'> Description </h4>
+            <h4 className='font-b tit'> Description </h4>
             <textarea onChange={(e) => setDescription(e.target.value)} defaultValue={data.description} placeholder="Description" className="form-control mb-3"  rows="4" /><br />
-            <h4 className='font-b'> image </h4>
+            <h4 className='font-b tit'> image </h4>
             <input type="file" onChange={(e) => setFile(e.target.files[0])} defaultValue={data.file_path} className="mb-3 form-control custom-placeholder" /> <br />
 
             <Button onClick={update} className="custom-btn"> Done </Button><br /> <br /> <br />  <br /> <br />

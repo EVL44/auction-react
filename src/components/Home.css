@@ -21,7 +21,7 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 25px;
-    background-color: rgb(26, 132, 218);
+    background-color: rgb(15, 20, 24) ;
     color: white;
 }
 
@@ -40,14 +40,14 @@
 }
 
 .getnow-btn {
-    background-color: rgb(26, 132, 218)!important;
-    border: rgb(26, 132, 218)!important;
+    background-color: rgb(15, 20, 24) !important;
+    border: rgb(15, 20, 24) !important;
     color: white !important;
 }
 
 .getnow-btn:hover{
     background-color: rgb(20, 102, 169) !important;   
-    border: rgb(26, 132, 218) !important;
+    border: rgb(15, 20, 24)  !important;
 }
 
 @media only screen and (max-width: 1024px) {

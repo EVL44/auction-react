@@ -42,16 +42,13 @@ function Home() {
           <Loading />
         ) : (
           <div className="rh">
-            <div className="display-card">
-              <h1 className="font-a"> 911 store coming soon </h1>
-            </div>
-            <div className="product-container font-b">
+            <div className="product-container font-b mt-5 mb-4">
               {topAuctions.map((item) => 
                 <Card className="Card" key={item.id} style={{ width: '18rem' }} onClick={() => handleProductClick(item)}>
                   <Card.Img style={{height: 150}} variant="top" src={`http://localhost:8000/${item.file_path}`} alt={item.name} />
                   <Card.Body>
                     <Card.Title>{item.name.length > 35 ? `${item.name.substring(0, 35)}...` : item.name}</Card.Title>
-                    <Card.Text> ${item.price} </Card.Text>
+                    <Card.Text> {item.price} MAD</Card.Text>
                     <Button className="getnow-btn">get it now</Button>
                   </Card.Body>
                 </Card>

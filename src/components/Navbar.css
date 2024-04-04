@@ -6,12 +6,11 @@
 	height: 70px;
 	padding: 0 2rem !important;
     background-color: #FFFF;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .logo {
     letter-spacing: 2px;
-    color: rgb(26, 132, 218);
+    color: rgb(15, 20, 24);
     cursor: pointer;
     margin-left: 20px;
 }
@@ -27,7 +26,7 @@ ul {
     flex: 1;
     list-style: none;
     text-align: center;
-    color: rgb(26, 132, 218);
+    color: rgb(15, 20, 24);;
 }
 
 ul li {
@@ -72,12 +71,12 @@ ul li {
 
 .links {
     text-decoration: none !important;
-    color: rgb(26, 132, 218);
+    color: rgb(15, 20, 24);
 }
 
 .your-avatar {
     border-radius: 50%;
-    border: 3px rgb(26, 132, 218) solid !important;
+    border: 3px rgb(15, 20, 24) solid !important;
     width: 35px;
     height: 35px;
     margin-left: 40px !important;
@@ -90,7 +89,7 @@ ul li {
 	background: transparent;
 	border: none;
 	outline: none;
-	color: rgb(26, 132, 218);
+	color: rgb(15, 20, 24) ;
 	visibility: hidden;
 	opacity: 0;
 	font-size: 1.8rem;
@@ -134,7 +133,7 @@ ul li {
 		height: 100%;
 		width: 100%;
 		gap: 1.5rem;
-		background-color: rgb(239, 235, 241);
+		background-color: #FFFF;
 		transition: 1s;
 	}
 

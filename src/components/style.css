@@ -61,25 +61,74 @@
 }
 
 
+/* the container of the form sign up and login and add */
+.back {
+  background-color: #F1EEF4;
+}
+
+.custom-cont-login {
+  background-color: #F1EEF4;
+  display: flex;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-cont-signup {
+  background-color: #FFF;
+  display: flex;
+  height: 110vh;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.custom-cont-addpro {
+  background-color: #F1EEF4;
+  display: flex;
+  height: 140vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-cont-updpro {
+  background-color: #F1EEF4;
+  display: flex;
+  height: 160vh;
+  justify-content: center;
+  align-items: center;
+}
+
 /* container of the sign up */
 .custom-signup {
-  width: 40%;
-  margin-right: 30px;
+  width: 45%;
+  background-color: #f6f2f9;    
+  padding: 30px 25px;
+  border-radius: 20px;
 }
 
 /* container of the login */
 .custom-login {
   width: 40%;
+  background-color: white;
+  padding: 50px 40px;
+  border-radius: 20px;
 }
 
-/* the container of the form sign up and login */
-.custom-cont {
-  margin: 100px 0 0 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* container of add */
+
+.custom-addpro {
+  width: 80%;
+  background-color: white;
+  padding: 50px 40px;
+  border-radius: 20px;
 }
 
+.custom-updpro {
+  width: 70%;
+  background-color: white;
+  padding: 50px 40px;
+  border-radius: 20px;
+}
 
 /* error message */
 
@@ -91,7 +140,9 @@
 
 /* the image in the registration page */
 .custom-sideimg {
-  width: 45%;
+  width: 40%;
+  border-radius: 20px;
+  background-color: transparent;
 }
 
 /* the carts in the home page */
@@ -134,14 +185,26 @@
   }
 
   .custom-sideimg {
-    width: 80% !important;
+    visibility: hidden;
   }
 
-  .custom-cont {
+  .custom-cont-login {
     width: 100% !important;
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .custom-cont-signup {
+    width: 100% !important;
+    height: 160vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .custom-cont-updpro {
+    height: 160vh;
   }
 
   .custom-login {
@@ -169,8 +232,8 @@
 
 /* buttons */
 .custom-btn {
-  background-color: rgb(17, 17, 17) !important;
-  border: 0px rgb(17, 17, 17) !important;
+  background-color: rgb(15, 20, 24)  !important;
+  border: 0px rgb(15, 20, 24)  !important;
   width: 100% !important;
   border-radius: 20px !important;
   padding: 10px !important;
@@ -200,51 +263,18 @@
   cursor: pointer !important;
 }
 
-/* Footer.css */
-
-.footer {
-  background-color: rgb(17, 17, 17);
-  ;
-  color: white;
-  padding: 30px 0;
-}
-
-.footer h4 {
-  color: #ffc107;
-  /* Yellow color for headers */
-}
-
-
-.footer ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer ul li a {
-  text-decoration: none;
-  color: white;
-  margin-bottom: 10px;
-}
-
-.footer-bottom {
-  background-color: rgb(17, 17, 17);
-  color: white;
-  padding: 10px 0;
-  text-align: center;
-}
-
 /* text fields in login and signup form from uiverse --------------------------------------------------- */
 .group {
   position: relative;
  }
 
  .input {
-  font-size: 16px;
+  font-size: 18px;
   padding: 10px 10px 10px 5px;
   display: block;
-  width: 600px;
+  width: 100%;
   border: none;
-  border-bottom: 1px solid #515151;
+  border-bottom: 1px solid rgb(15, 20, 24) ;
   background: transparent;
  }
 
@@ -253,7 +283,7 @@
  }
 
  label {
-  color: #999;
+  color: rgb(15, 20, 24) ;
   font-size: 18px;
   font-weight: normal;
   position: absolute;
@@ -268,13 +298,13 @@
  .input:focus ~ label, .input:valid ~ label {
   top: -20px;
   font-size: 14px;
-  color: rgb(17, 17, 17);
+  color: rgb(15, 20, 24) ;
  }
 
  .bar {
   position: relative;
   display: block;
-  width: 600px;
+  width: 100%;
  }
 
  .bar:before, .bar:after {
@@ -283,7 +313,7 @@
   width: 0;
   bottom: 1px;
   position: absolute;
-  background: rgb(17, 17, 17);
+  background: rgb(15, 20, 24) ;
   transition: 0.2s ease all;
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
@@ -317,7 +347,7 @@
 
  @keyframes inputHighlighter {
   from {
-   background: rgb(17, 17, 17);
+   background: rgb(15, 20, 24) ;
   }
 
   to {
@@ -336,5 +366,25 @@
 }
 
 .update-img {
-  width: 100%;
+  width: 80%;
+}
+
+/*some news here----------------------------------------------------------------------------------------*/
+
+.tit {
+  color: rgb(15, 20, 24) ;
+  margin-bottom: 20px;
+}
+
+.nores {
+  margin-top: 100px;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center
+}
+
+.undrow {
+  height: 500px;
 }
