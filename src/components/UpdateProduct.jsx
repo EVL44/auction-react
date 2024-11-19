@@ -73,7 +73,7 @@ function UpdateProduct() {
             <h4 className='font-b tit'> image </h4>
             <input type="file" onChange={(e) => setFile(e.target.files[0])} defaultValue={data.file_path} className="mb-3 form-control custom-placeholder" /> <br />
 
-            <Button onClick={update} className="custom-btn"> Done </Button><br /> <br /> <br />  <br /> <br />
+            <Button onClick={update} className="custom-btn mb-3"> Done </Button>
           </Form>
 
         </div>

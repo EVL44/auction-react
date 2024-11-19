@@ -90,7 +90,7 @@ function MyProducts() {
               <tbody>
                 {data.map((item) =>
                   <tr key={item.pid} className='rowww'>
-                    <td><img className='shwimg'  onClick={() => handleProductClick(item)} src={"http://localhost:8000/" + item.file_path} alt={item.name} /></td>
+                    <td><img className='shwimg'  onClick={() => handleProductClick(item)} src={ item.file_path} alt={item.name} /></td>
                     <td>{item.name.length > 35 ? `${item.name.substring(0, 35)}...` : item.name}</td>
                     <td className='prc'>{item.price} MAD</td>
                     <td className='ops'>

@@ -35,7 +35,7 @@ function Search() {
             {data.map((item) => (
               <tr key={item.id} onClick={() => handleProductClick(item)}>
                 <td>
-                  <img style={{  height: 100 }} src={`http://localhost:8000/${item.file_path}`} alt={item.name} />
+                  <img style={{  height: 100 }} src={`${item.file_path}`} alt={item.name} />
                 </td>
                 <td>{item.name}</td>
                 <td>{item.price} $</td>

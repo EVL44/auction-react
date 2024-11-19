@@ -68,7 +68,7 @@ function Navbar() {
             <div className="avatar-container">
               <Link to="/profile" className="links">
                 {avatar ? (
-                  <img src={`http://localhost:8000/${avatar}`} alt="User Avatar" className="your-avatar" />
+                  <img src={`${avatar}`} alt="User Avatar" className="your-avatar" />
                 ) : (
                   <img src="/public/unknown.jpg" alt="Unknown Avatar" className="your-avatar" />
                 )}

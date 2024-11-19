@@ -113,7 +113,7 @@ function Header() {
                   
                   {avatarLoaded ? (
                     <img
-                      src={"http://localhost:8000/" + avatar}
+                      src={avatar}
                       style={{ width: 35, height: 35 }}
                       alt="User Avatar"
                       className="avatar"
